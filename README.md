@@ -1,4 +1,7 @@
-# Portfolio
+# Integrated State Management Library
+
+### Note:
+ <span style="color: #f03c15">All Add, Update, Delete, Get actions are done using real mock api just newly added product item, update action is not working but with the existing product list all actions are working. </span>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
