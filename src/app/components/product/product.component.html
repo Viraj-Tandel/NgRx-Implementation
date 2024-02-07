@@ -1,0 +1,35 @@
+<div class="header-container">
+  <div class="header-content">
+    <h2 class="header-title">NGRX Practice</h2>
+    <div class="header-buttons">
+      <button (click)="getProductList()" class="btn btn-success">Get Product List</button>
+      <button (click)="addNewProduct()" class="btn btn-success">Add New Card</button>
+    </div>
+  </div>
+</div>
+<div class="product-container">
+  <div *ngFor="let product of productList; trackBy: trackByFunction" class="product-card">
+    <div class="product-image-container">
+      <!-- Edit button positioned at top-right corner -->
+      <button (click)="editProduct(product)" class="edit-button" mat-icon-button>
+        <mat-icon aria-label="Edit product">edit</mat-icon>
+      </button>
+
+      <!-- Delete button positioned at top-right corner -->
+      <button (click)="deleteProduct(product)" class="delete-button" mat-icon-button>
+        <mat-icon aria-label="Delete product">delete</mat-icon>
+      </button>
+
+      <img [src]="product.thumbnail" alt="Product Thumbnail" class="product-thumbnail">
+    </div>
+
+    <div class="product-details">
+      <div class="product-title">{{ product.title }}</div>
+      <div class="product-description">{{ product.description }}</div>
+      <div class="product-price">$ {{ product.price }}</div>
+      <div class="product-discount">Discount: {{ product.discountPercentage }}%</div>
+      <div class="product-rating">Rating: {{ product.rating }}</div>
+    </div>
+  </div>
+</div>
+
