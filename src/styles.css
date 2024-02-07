@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import '././ngx-toastr/toastr'*/
+
+/*@import "/node_modules/ngx-toastr/toastr.css";*/
+
+@import '~ngx-toastr/toastr';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+#toast-container > div {
+  opacity: 1;
+}
+
+.toast-top-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+

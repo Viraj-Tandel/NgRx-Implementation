@@ -1,0 +1,81 @@
+<div class="container-fluid wrapper">
+  <h3 class="header">Add Product</h3>
+  <hr class="separator" />
+  <div *ngIf="productForm" [formGroup]="productForm">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="form-field">
+          <input formControlName="title" matInput placeholder="Title" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field class="form-field">
+          <input formControlName="description" matInput placeholder="Description" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="form-field">
+          <input formControlName="price" matInput placeholder="Price" type="number" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field class="form-field">
+          <input formControlName="discountPercentage" matInput placeholder="Discount Percentage" type="number" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="form-field">
+          <input formControlName="rating" matInput placeholder="Rating" type="number" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field class="form-field">
+          <input formControlName="stock" matInput placeholder="Stock" type="number" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field class="form-field">
+          <input formControlName="brand" matInput placeholder="Brand" />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field class="form-field">
+          <input formControlName="category" matInput placeholder="Category" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div *ngIf="!currentProduct" class="row">
+      <div class="col-md-6">
+        <mat-form-field class="form-field">
+          <input formControlName="thumbnail" matInput placeholder="Thumbnail" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row button-container">
+      <div class="col-md-12 d-flex justify-content-end">
+        <button (click)="saveButtonClick()" [disabled]="!productForm.valid" class="submit-button" color="primary"
+                mat-raised-button type="button"><span *ngIf="!currentProduct">ADD</span> <span *ngIf="currentProduct">UPDATE</span>
+        </button>
+
+        <button (click)="cancelButtonClick()" class="cancel-button" color="warn" mat-raised-button type="button">
+          CANCEL
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
